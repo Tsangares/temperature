@@ -4,7 +4,7 @@ from MockDHT import MockDHT
 from iota import Iota, ProposedTransaction, Address, TryteString, Fragment, Transaction,adapter
 from multiprocessing import Process
 class Controller:
-    endpoint = endpoint = ('AMARCUS'*81)[:81]
+    endpoint = ('AMARCUS'*81)[:81]
     def __init__(self):
         self.dht = MockDHT()
         self.api = Iota(adapter='https://nodes.thetangle.org:443',local_pow=True)

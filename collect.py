@@ -4,9 +4,12 @@ from sensor import Controller
 from iota import Iota, ProposedTransaction, Address, TryteString, Fragment, Transaction
 
 class Collector:
-    def __init__(self):
+    def __init__(self,endpoint=None):
         self.api = Iota(adapter='https://nodes.thetangle.org:443')
-        self.endpoint = Controller.endpoint
+        if endpoint is None:
+            self.endpoint = Controller.endpoint
+        else:
+            self.endpoint = endpoint
 
     def getData(self,txHash):
         hashes=api.find_transactions(addresses=[address,])['hashes']
@@ -21,4 +24,4 @@ class Collector:
 if __name__=='__main__':
     collector = Collector()
     txs = collector.read() 
-    print(txs)
+    print(txs,len(txs))
