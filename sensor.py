@@ -40,7 +40,8 @@ class Controller:
             if p.exitcode is None:
                 p.terminate()
                 print("Sending took longer than 20 secconds. Retrying.")
-            duration = time.time() - startTime                
+            duration = time.time() - startTime
+            print(f"Waiting {int(delay-duration)} secconds.")
             time.sleep(int(delay-duration))
 if __name__=="__main__":
     controller = Controller()
