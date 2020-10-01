@@ -1,5 +1,4 @@
 import time,json
-import adafruit_dht
 from sensor import Controller
 from iota import Iota, ProposedTransaction, Address, TryteString, Fragment, Transaction
 
