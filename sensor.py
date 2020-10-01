@@ -1,5 +1,4 @@
 import time,json
-import adafruit_dht
 from MockDHT import MockDHT
 from iota import Iota, ProposedTransaction, Address, TryteString, Fragment, Transaction,adapter
 from multiprocessing import Process
