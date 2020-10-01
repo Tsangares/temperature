@@ -30,14 +30,17 @@ class Controller:
         print(f'Sent in {duration:.01f} secconds to {reference}')
 
     def monitor(self):
+        delay = 60 #secconds
         while(True):
+            startTime = time.time()
             p = Process(target=self.record)
             p.start()
             p.join(timeout=20)
             if p.exitcode is None:
                 p.terminate()
                 print("Sending took longer than 20 secconds. Retrying.")
-            
+            duration = time.time() - startTime                
+            time.sleep(int(delay-duration))
 if __name__=="__main__":
     controller = Controller()
     print(controller.endpoint)
