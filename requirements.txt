@@ -16,7 +16,6 @@ phx-filters==2.0.2
 pycparser==2.20
 pyftdi==0.52.0
 pyOpenSSL==19.1.0
-PyOTA==2.1.0
 PyOTA-CCurl==1.0.9
 PyOTA-PoW==1.1.0
 pyserial==3.4
