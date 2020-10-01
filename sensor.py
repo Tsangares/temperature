@@ -7,7 +7,7 @@ class Controller:
     endpoint = ('AMARCUS'*81)[:81]
     def __init__(self):
         self.dht = MockDHT()
-        self.api = Iota(adapter='https://nodes.thetangle.org:443',local_pow=True)
+        self.api = Iota(adapter='https://nodes.thetangle.org:443',local_pow=False)
         
     def getMeasurement(self):
         return [time.time(),self.dht.temperature,self.dht.humidity]
