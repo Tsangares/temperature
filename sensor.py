@@ -4,7 +4,8 @@ from iota import Iota, ProposedTransaction, Address, TryteString, Fragment, Tran
 from multiprocessing import Process
 class Controller:
     endpoint = ('AMARCUS'*81)[:81]
-    def __init__(self):
+    def __init__(self,delay=60):
+        self.delay=delay
         self.dht = MockDHT()
         self.api = Iota(adapter='https://nodes.thetangle.org:443',local_pow=False)
         
@@ -30,7 +31,7 @@ class Controller:
         print(f'Sent in {duration:.01f} secconds to {reference}')
 
     def monitor(self):
-        delay = 60 #secconds
+        delay = self.delay #secconds
         while(True):
             startTime = time.time()
             p = Process(target=self.record)
